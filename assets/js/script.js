@@ -41,8 +41,10 @@ function checkAnswer() {
 
     if (isCorrect) {
         alert("That is correct mate!");
+        incrementScore();
     } else {
         alert(`Sorry, please come again. Correct answer was ${calculatedAnswer[0]} :/`);
+        incrementWrongAnswer();
     }
 
     runGame(calculatedAnswer[1]);
@@ -66,10 +68,15 @@ function calculateCorrectAnswer() {
 }
 
 function incrementScore() {
+    let oldScore = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = ++oldScore;
+        
 
 }
 
 function incrementWrongAnswer() {
+    let oldScore = parseInt(document.getElementById("incorrect").innerText);
+    document.getElementById("incorrect").innerText = ++oldScore;
 
 }
 
